@@ -11,23 +11,27 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { UserService } from "./core/services/user.service";
 import { UsersModule } from "./users/users.module";
+import { ActorsModule } from './actors/actors.module';
+import { ActorService } from "./core/services/actor.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     UsersModule,
+    ActorsModule,
     HttpClientModule,
     CoreModule
   ],
   providers: [
-    UserService
+    UserService,
+    ActorService
   ],
   bootstrap: [AppComponent]
 })
