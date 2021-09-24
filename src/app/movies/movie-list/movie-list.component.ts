@@ -11,6 +11,9 @@ import { MovieService } from 'src/app/core/services/movie.service';
             <div class="card">
               <div class="card-content">
                 <a [routerLink]="'' + (i+1)" >{{ movie.title }}</a>
+                <figure class="image is-4by3">
+                  <img src="assets/img/{{i}}.jpg"  alt="">
+                </figure>
                 <p><br>Episode : {{ movie.episode_id }}</p>
                 <p>Release Date : {{ movie.release_date }}</p>
               </div>

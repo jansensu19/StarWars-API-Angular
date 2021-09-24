@@ -14,7 +14,11 @@ import { ActorService } from 'src/app/core/services/actor.service';
             </div>
           </section>
 
+            
           <div class="message-body">
+            <figure class="image is-4by3" *ngFor="let i = index">
+                <img src="assets/img/{{i  + 1}}.jpg"  alt="">
+            </figure>
             <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Height : {{ actor.height }}</h2>
             <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Mass : {{ actor.mass }}</h2>
             <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Hair Color : {{ actor.hair_color }}</h2>
@@ -27,7 +31,6 @@ import { ActorService } from 'src/app/core/services/actor.service';
             <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Url : {{ actor.url }}</h2>
           </div>
         </div>
-
       </div>
     </section>
   `,
