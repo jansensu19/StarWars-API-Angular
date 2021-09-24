@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ActorObj } from 'src/app/actorobj.model';
 
 @Injectable()
 export class ActorService {
@@ -16,11 +17,15 @@ export class ActorService {
     })
   }
 
-  getActors(){
-    return this.http.get(`${this.apiUrl}`);
+  async getActors(){
+    let data;
+    await this.http.get<any>(`${this.apiUrl}`).toPromise().then(response => data = response.results);
+    return data
   }
 
-  getActor(name: string){
-    return this.http.get(`${this.apiUrl}/${name}?per_page=10`);
+  async getActor(name: string){
+    let data;
+    await this.http.get<any>(`${this.apiUrl}${name}`).toPromise().then(response => data = response.results);
+    return data
   }
 }

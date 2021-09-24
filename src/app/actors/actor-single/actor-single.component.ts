@@ -9,7 +9,7 @@ import { ActorService } from 'src/app/core/services/actor.service';
       <div class="container">
 
         <div class="card" *ngIf="actor">
-          <h2>{{ actor.results.name }}</h2>
+          <h2>{{ actor.name }}</h2>
         </div>
 
       </div>
@@ -19,16 +19,15 @@ import { ActorService } from 'src/app/core/services/actor.service';
   ]
 })
 export class ActorSingleComponent implements OnInit {
-actor
+actor;
   constructor( private actorService: ActorService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe(async params => {
       const actorname = params['actorname'];
-      this.actorService
-      .getActor(actorname)
-      .subscribe(actor => this.actor = actor)
+      this.actor = await this.actorService.getActors()
+      console.log(this.actor)
     });
   }
 }

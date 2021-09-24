@@ -7,14 +7,16 @@ import { ActorService } from 'src/app/core/services/actor.service';
     <section class="section">
       <div class="container">
         <div class="columns is-multiline" *ngIf="actors">
-          <div class="column is-4" *ngFor="let actor of actors | async">
-            {{ actor.results.name }}
+          <div class="column is-4" *ngFor="let actor of actors">
+            {{ actor.name }}
           <div class="card">
             <div class="card-content">
-              <a routerLink="/users/{{ actor.results.name }}">{{ actor.results.name }}</a>
+              <a routerLink="/characters/{{ actor.name }}">{{ actor.name }}</a>
+              
+              <p><br>Height : {{ actor.height }}</p>
+              <p>birth_year : {{ actor.birth_year }}</p>
             </div>
           </div>
-
           </div>
         </div>
       </div>
@@ -28,8 +30,9 @@ export class ActorListComponent implements OnInit {
 
   constructor(private actorService: ActorService) { }
 
-  ngOnInit() {
-    this.actors = this.actorService.getActors()
+  async ngOnInit() {
+    this.actors = await this.actorService.getActors()
+    console.log(this.actors)
   }
 
 }
