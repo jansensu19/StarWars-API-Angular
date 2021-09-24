@@ -9,10 +9,10 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
-import { UserService } from "./core/services/user.service";
-import { UsersModule } from "./users/users.module";
 import { ActorsModule } from './actors/actors.module';
 import { ActorService } from "./core/services/actor.service";
+import { MovieService } from './core/services/movie.service';
+import { MoviesModule } from './movies/movies.module';
 
 @NgModule({
   declarations: [
@@ -24,14 +24,14 @@ import { ActorService } from "./core/services/actor.service";
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    UsersModule,
     ActorsModule,
+    MoviesModule,
     HttpClientModule,
     CoreModule
   ],
   providers: [
-    UserService,
-    ActorService
+    ActorService,
+    MovieService
   ],
   bootstrap: [AppComponent]
 })

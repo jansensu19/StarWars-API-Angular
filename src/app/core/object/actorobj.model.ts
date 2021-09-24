@@ -3,7 +3,7 @@ export class ActorObj {
     height: number;
     mass: number; 
     hair_color: string;
-    kin_color: string;
+    skin_color: string;
     eye_color: string; 
     birth_year: string;
     gender: string;
@@ -15,7 +15,7 @@ export class ActorObj {
     constructor() {
         this.name = ""; 
         this.hair_color = "";
-        this.kin_color = "";
+        this.skin_color = "";
         this.eye_color = ""; 
         this.birth_year = "";
         this.gender = "";

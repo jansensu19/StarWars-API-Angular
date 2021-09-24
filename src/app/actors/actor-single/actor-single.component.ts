@@ -7,9 +7,25 @@ import { ActorService } from 'src/app/core/services/actor.service';
   template: `
     <section class="section">
       <div class="container">
-
         <div class="card" *ngIf="actor">
-          <h2>{{ actor.name }}</h2>
+          <section class="hero is-info">
+            <div class="hero-body">
+              <h1 class="title is-1 ml-4 mb-6">{{ actor.name }}</h1>
+            </div>
+          </section>
+
+          <div class="message-body">
+            <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Height : {{ actor.height }}</h2>
+            <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Mass : {{ actor.mass }}</h2>
+            <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Hair Color : {{ actor.hair_color }}</h2>
+            <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Skin Color : {{ actor.skin_color }}</h2>
+            <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Eye Color : {{ actor.eye_color }}</h2>
+            <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Birth Year : {{ actor.birth_year }}</h2>
+            <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Gender : {{ actor.gender }}</h2>
+            <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Created : {{ actor.created }}</h2>
+            <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Edited : {{ actor.edited }}</h2>
+            <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Url : {{ actor.url }}</h2>
+          </div>
         </div>
 
       </div>
@@ -25,7 +41,8 @@ actor;
   ngOnInit(): void {
 
     this.route.params.subscribe(async params => {
-      this.actor = await this.actorService.getActors()
+      const actorname = params['actorname'];
+      this.actor = await this.actorService.getActor(actorname)
       console.log(this.actor)
     });
   }

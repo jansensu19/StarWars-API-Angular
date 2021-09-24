@@ -7,12 +7,12 @@ import { ActorService } from 'src/app/core/services/actor.service';
     <section class="section">
       <div class="container">
         <div class="columns is-multiline" *ngIf="actors">
-          <div class="column is-4" *ngFor="let actor of actors">
+          <div class="column is-4" *ngFor="let actor of actors; let i = index">
             <div class="card">
               <div class="card-content">
-                <a routerLink="/characters/{{ actor.name }}">{{ actor.name }}</a>
+                <a [routerLink]="'' + (i+1)" >{{ actor.name }}</a>
                 <p><br>Height : {{ actor.height }}</p>
-                <p>birth_year : {{ actor.birth_year }}</p>
+                <p>Birth Year : {{ actor.birth_year }}</p>
               </div>
             </div>
           </div>

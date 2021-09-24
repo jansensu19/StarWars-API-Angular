@@ -27,7 +27,7 @@ import { Component, OnInit } from '@angular/core';
               </figure>
 
               <div class="buttons is-centered mt-5">
-                <a routerLink="/movielist"><button class="button is-link is-hovered is-focused">See More</button></a>
+                <a routerLink="/movies"><button class="button is-link is-hovered is-focused">See More</button></a>
               </div>
 
             </div>
