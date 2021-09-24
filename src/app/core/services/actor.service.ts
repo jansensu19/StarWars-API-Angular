@@ -24,8 +24,8 @@ export class ActorService {
   }
 
   async getActor(name: string){
-    let data;
-    await this.http.get<any>(`${this.apiUrl}${name}`).toPromise().then(response => data = response.results);
+    let data : ActorObj = new ActorObj()
+    await this.http.get<ActorObj>(`${this.apiUrl}/${name}`).toPromise().then(response => data = response);
     return data
   }
 }

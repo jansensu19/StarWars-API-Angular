@@ -25,7 +25,6 @@ actor;
   ngOnInit(): void {
 
     this.route.params.subscribe(async params => {
-      const actorname = params['actorname'];
       this.actor = await this.actorService.getActors()
       console.log(this.actor)
     });

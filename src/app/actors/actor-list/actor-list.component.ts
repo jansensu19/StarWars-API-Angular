@@ -8,15 +8,13 @@ import { ActorService } from 'src/app/core/services/actor.service';
       <div class="container">
         <div class="columns is-multiline" *ngIf="actors">
           <div class="column is-4" *ngFor="let actor of actors">
-            {{ actor.name }}
-          <div class="card">
-            <div class="card-content">
-              <a routerLink="/characters/{{ actor.name }}">{{ actor.name }}</a>
-              
-              <p><br>Height : {{ actor.height }}</p>
-              <p>birth_year : {{ actor.birth_year }}</p>
+            <div class="card">
+              <div class="card-content">
+                <a routerLink="/characters/{{ actor.name }}">{{ actor.name }}</a>
+                <p><br>Height : {{ actor.height }}</p>
+                <p>birth_year : {{ actor.birth_year }}</p>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
