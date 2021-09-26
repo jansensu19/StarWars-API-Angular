@@ -11,6 +11,9 @@ import { ActorService } from 'src/app/core/services/actor.service';
             <div class="card">
               <div class="card-content">
                 <a [routerLink]="'' + (i+1)" >{{ actor.name }}</a>
+                <figure class="image is-4by3 mt-6">
+                  <img src="./assets/img/{{ i + 1 }}.jpg"  alt="">
+                </figure>
                 <p><br>Height : {{ actor.height }}</p>
                 <p>Birth Year : {{ actor.birth_year }}</p>
               </div>
