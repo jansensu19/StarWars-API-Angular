@@ -15,9 +15,9 @@ import { ActorService } from 'src/app/core/services/actor.service';
           </section>
 
             
-          <div class="message-body" *ngFor=" let i = index">
-              <figure class="image is-4by3 mt-6">
-                <img src="./assets/img/'{{ i + 1 }}.jpg"  alt="">
+          <div class="message-body">
+              <figure class="image is-4by5 mb-5 mt-6">
+                <img src="./assets/img/characters/{{ actor.name }}.jpg"  alt="">
               </figure>
             <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Height : {{ actor.height }}</h2>
             <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Mass : {{ actor.mass }}</h2>

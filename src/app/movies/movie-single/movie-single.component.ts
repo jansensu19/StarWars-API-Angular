@@ -16,8 +16,11 @@ import { MovieService } from 'src/app/core/services/movie.service';
           </section>
           
           <div class="message-body">
+            <figure class="image is-3by4 mb-5 mt-6">
+              <img src="./assets/img/movie/{{ movie.title }}.jpg"  alt="">
+            </figure>
             <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Episode : {{ movie.episode_id }}</h2>
-            <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Opening Crawl : {{ movie.opening_crawl }}</h2>
+            <h2 class="subtitle is-4 ml-6 mt-4 mb-4 pd-0">Opening Crawl : {{ movie.opening_crawl }}</h2>
             <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Director : {{ movie.director }}</h2>
             <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Producer : {{ movie.producer }}</h2>
             <h2 class="subtitle is-4 ml-6 mb-1 pd-0">Release Date : {{ movie.release_date }}</h2>

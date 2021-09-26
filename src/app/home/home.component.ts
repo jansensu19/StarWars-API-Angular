@@ -17,7 +17,7 @@ import { Component, OnInit } from '@angular/core';
         </div>
 
       <div class="hero-body">
-        <div class="columns is-mobile mb-6">
+        <div class="columns mb-6">
           <div class="column is-11 is-offset-7">
             <div class="box">
 
