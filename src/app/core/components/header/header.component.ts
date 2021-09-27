@@ -2,25 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  template: `
-    <div class="navbar is-dark">
-      <!-- logo -->
-      <div class="navbar-brand">
-        <a routerLink="/" class="navbar-item"><img src="assets/img/starwars_logo.png"></a>
-      </div>
-    
-
-    <!-- menu -->
-      <div class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" routerLink="/">Home</a>
-          <a class="navbar-item" routerLink="/characters">Characters</a>
-          <a class="navbar-item" routerLink="/movies">Movie</a>
-          <a class="navbar-item" routerLink="/contact">Contact</a>
-        </div>
-      </div>
-    </div>
-  `,
+  templateUrl: './header.component.html',
   styles: [
   ]
 })
